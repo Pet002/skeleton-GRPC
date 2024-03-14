@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-grpc-deployment-deploy
+  namespace: petch
+spec:
+  selector:
+    matchLabels:
+      app: core-grpc-deployment-deploy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: core-grpc-deployment-deploy
+    spec:
+      containers:
+      - name: test
+        image: asia-southeast1-docker.pkg.dev/prompt-lab-383408/testing-repo/test:v0.0.3
+        ports:
+        - containerPort: 8080

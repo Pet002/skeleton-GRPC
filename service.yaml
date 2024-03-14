@@ -1,0 +1,13 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: core-grpc-deployment-deploy
+  namespace: petch
+spec:
+  selector:
+    app: core-grpc-deployment-deploy
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
